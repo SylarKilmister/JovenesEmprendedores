@@ -1,0 +1,79 @@
+.sisweb {
+  background-color: $veryLightGray;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+      background-position: center 60%;
+      margin-bottom: 3rem;
+    }
+    @include breakpoint-up(large) {
+      flex: 2;
+      order: 1;
+      min-height: 41rem;
+      background-image: none;
+    }
+
+    &::before {
+      @include breakpoint-up(large) {
+        content: "";
+        position: absolute;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 161%;
+        background-size: 122%;
+        background-position: -5% 83%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("/images/image-negocios2.jpg");
+      background-size: 75%;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      @include breakpoint-up(medium) {
+        background-size: 66%;
+        margin-bottom: 2.5rem;
+      }
+
+      @include breakpoint-up(large) {
+        width: 120%;
+        height: 129%;
+        background-size: 66%;
+        background-position: center 27%;
+        left: -14%;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: medium;
+
+    @include breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      text-align: left;
+    }
+  }
+}
